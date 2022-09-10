@@ -56,7 +56,7 @@ jobs:
         key: ${{ secrets.YANDEX_CLOUD_SSH }}
         script: |
             sudo docker-compose stop
-            sudo docker-compose rm web
+            sudo docker-compose rm web -f
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:1.0.1
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
